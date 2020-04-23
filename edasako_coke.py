@@ -42,11 +42,18 @@ for i in range(len(values)):
         context += "コカ・コーラ（" + values[i][0] + "ml）" +"\n"
         context += "価格:" + values[i][1] + "（" + values[i][2] +"）" +"\n"
         context += "賞味期限:" + values[i][3] +"\n"
-        context += "仕様:" + values[i][4] +"\n"
-        for q in range(len(values)):
-            total += int(values[q][0])
+        context += "製造所:" + values[i][4] +"\n"
+        context += "仕様:" + values[i][5] +"\n"
+        for q in range(len(values)):            
+            if values[q+1][6] =="1":
+                total += int(values[q+1][0])
+            else:
+                total += int(values[i][0])
+                worksheet.update_cell(i + 1, 7, '1')
+                break                        
         context += "2020年度総量:" + str(total) + "ml"+"\n"
-        t.statuses.update(status=context)
-        worksheet.update_cell(i + 1, 6, '1')
+        print(context)
+        # t.statuses.update(status=context)
+        # worksheet.update_cell(i + 1, 7, '1')
 
     context = ""
