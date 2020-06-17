@@ -41,7 +41,7 @@ def main () :
     for i in range(1, len(values)):
         if values[i][6] != "1" :
             context += "コカ・コーラ（" + values[i][0] + "ml）" +"\n"
-            context += "価格:" + values[i][1] + "（" + values[i][2] +"）" +"\n"
+            context += "価格:" + values[i][1] + "円（" + values[i][2] +"）" +"\n"
             context += "賞味期限:" + values[i][3] +"\n"
             context += "製造所:" + values[i][4] +"\n"
             context += "仕様:" + values[i][5] +"\n"
