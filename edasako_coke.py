@@ -54,10 +54,13 @@ def main () :
                     break                        
             context += "2020年度総量:" + str(total) + "ml"+"\n"
             print(context)
-            t.statuses.update(status=context)
+            # t.statuses.update(status=context)
             worksheet.update_cell(i + 1, 7, '1')
+            total = 0
 
         context = ""
+        total = 0
 
 if __name__ == "__main__":
     main ()
+    
